@@ -1173,7 +1173,7 @@ DOCTEST_CLANG_SUPPRESS_WARNING_WITH_PUSH("-Wunused-comparison")
     }												   \
     template <typename R ,typename enable_if<  !doctest::detail::is_rvalue_reference<R>::value   , void >::type* = nullptr>                                         \
     DOCTEST_NOINLINE SFINAE_OP(Result,op) operator op(const R& rhs) {             \
-    bool res = op_macro(doctest::detail::forward<const L>(lhs), doctest::detail::forward<const R>(rhs));                                                             \
+    bool res = op_macro(doctest::detail::forward<const L>(lhs), rhs);                              \
         if(m_at & assertType::is_false)                                                            \
             res = !res;                                                                            \
         if(!res || doctest::getContextOptions()->success)                                          \
