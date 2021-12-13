@@ -910,8 +910,8 @@ namespace detail {
     struct filldata<T[N]>
     {
         static void fill(const T (&in)[N]) {
+                    getTlsOss();
                     fillstream(in);
-                    *getTlsOss(false)<<"";
         }
     };
 
