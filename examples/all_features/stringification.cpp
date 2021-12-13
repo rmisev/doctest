@@ -161,3 +161,8 @@ TEST_CASE("a test case that registers an exception translator for int and then t
 
     throw_if(true, 5);
 }
+
+TEST_CASE("string comparison") {
+    std::string str = "ABC";
+    CHECK(str == "ABC2");
+}
